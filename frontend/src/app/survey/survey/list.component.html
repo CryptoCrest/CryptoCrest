@@ -1,0 +1,60 @@
+<!-- <%- include ../partials/header.ejs %> -->
+<app-header> </app-header>
+
+  <!-- Main Content -->
+  <main class="container" >
+    <div class="row">
+        <h1>Survey List</h1>
+        <br>
+        <div>
+            <br>
+            <a routerLink="/survey/add" class="btn btn-primary align-self-end" role="button">
+                <i class="fas fa-plus-circle"></i> 
+                Add a new Survey
+            </a> 
+        </div>
+            
+        </div>
+
+        <div class="table-responsive">
+            <br>          
+            <table class="table table-bordered table-striped table-hover">
+                <!-- Header Row-->
+                <tr>
+                    <th class="text-center">Survey Name</th>
+                    <th class="text-center">Number of questions</th>
+                    <th class="text-center">Description</th>
+                    <th class="text-center" colspan="2">Actions</th>
+                </tr>
+
+                <!-- Repeatable Template Row -->
+
+                <tr *ngFor="let item of surveyList">
+                        <td class="text-center">{{item.item }}</td>
+                        <td class="text-center">{{item.qty }}</td>
+                        <td class="text-center">{{item.status }}</td>
+                        
+                        <td class="text-center">
+                            <!-- <a href="/survey/edit/{{item._id }}" class="btn btn-primary btn-sm"> -->
+                        <button [routerLink]="['/survey/edit/', item._id]" class="btn bg-primary btn-primary btn-sm">
+                            <i class="fas fa-pencil-alt"></i>
+                        </button>
+                            
+                        </td>
+                        <td class="text-center">
+                            <!-- <a href="/survey/delete/{{item._id }}" class="btn btn-danger btn-sm"> -->
+                                <a (click)="deleteMethod(item._id)" class="btn bg-danger btn-danger btn-sm">
+                            <i class="fas fa-trash-alt"></i></a>
+                        </td>
+                    </tr>
+                
+                    
+                <!-- <% } %> -->
+
+            </table>
+        
+    </div>
+  </main>
+  <app-footer> </app-footer>
+  
+<!-- <%- include ../partials/footer.ejs %> -->
