@@ -1,12 +1,5 @@
 
-
-/**
-Author Name: Ayesha Mohammed Azim
-Student number: 301166757
-Date: 2 October 2021
-File name: style.css
-**/
-
+/* styles for main div */
 .main_div{
   position:relative;
   width: 100%;
@@ -21,6 +14,7 @@ File name: style.css
   padding-top: 0px;
 }
 
+/* style for container div */
 .container_div{
   background-color:rgba(0,0,0,0.6);
   width:55vw;
@@ -67,7 +61,7 @@ File name: style.css
   text-align: center;
 }
 
-/* Styling my image on about page by rounding the borders */
+/* Styling logo on about page by rounding the borders */
 .id{
   border-radius: 50%
 }
@@ -105,7 +99,7 @@ h3{
   border-style: none;
 }
 
-/* Styling input in the form used in contact me page */
+/* Stylings */
 input{
   width:30vw;
   height: 60px;
@@ -128,7 +122,7 @@ input::placeholder{
   font-weight: bold;
 }
 
-/* Styling button used in contact me page */
+/* Styling buttons */
 button{   
   color:#fff;
   background:black;

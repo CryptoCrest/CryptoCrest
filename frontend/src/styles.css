@@ -1,13 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
-
-
-/**
-Author Name: Ayesha Mohammed Azim
-Student number: 301166757
-Date: 2 October 2021
-File name: style.css
-**/
-
+/* Styling the main div */
 .main_div{
     position:relative;
     width: 100%;
@@ -21,7 +12,7 @@ File name: style.css
     padding-bottom:0px;
     padding-top: 0px;
   }
-  
+  /* Styling the container div */
   .container_div{
     background-color:rgba(0,0,0,0.6);
     width:55vw;
@@ -68,12 +59,12 @@ File name: style.css
     text-align: center;
   }
   
-  /* Styling my image on about page by rounding the borders */
+  /* Styling logo by rounding the borders */
   .id{
     border-radius: 50%
   }
   
-  /* Styling the table used in projects and services */
+  /* Styling the table */
   table {
     font-family: 'papyrus';
     border-collapse: collapse;
@@ -106,7 +97,7 @@ File name: style.css
     border-style: none;
   }
   
-  /* Styling input in the form used in contact me page */
+  /* Styling input in the form */
   input{
     width:30vw;
     height: 60px;

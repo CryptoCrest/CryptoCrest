@@ -1,6 +1,7 @@
 // create a reference to the model
 let Survey = require('../models/survey');
 
+//function to show error messages
 function getErrorMessage(err) {
     if (err.errors) {
         for (let errName in err.errors) {
@@ -11,11 +12,10 @@ function getErrorMessage(err) {
     }
 };
 
-
+//logic for getting survey list
 module.exports.surveyList = function(req, res, next) {  
 
     Survey.find((err, surveyList) => {
-        //console.log(inventoryList);
         if(err)
         {
             console.error(err);
@@ -26,16 +26,12 @@ module.exports.surveyList = function(req, res, next) {
         }
         else
         {
-            // res.render('survey/list', {
-            //     title: 'Survey List', 
-            //     SurveyList: surveyList,
-            //     userName: req.user ? req.user.username : ''
-            // })
             res.status(200).json(surveyList);            
         }
     });
 }
 
+//gets survey by ID
 exports.surveyByID = function (req, res, next) {
 
     let id = req.params.id;
@@ -56,42 +52,11 @@ exports.getItem = function (req, res) {
 
 
 
-
-
-// module.exports.displayEditPage = (req, res, next) => {
-    
-//     let id = req.params.id;
-
-//     Survey.findById(id, (err, itemToEdit) => {
-//         if(err)
-//         {
-//             console.log(err);
-//             res.end(err);
-//         }
-//         else
-//         {
-//             //show the edit view
-//             res.render('survey/add_edit', {
-//                 title: 'Edit Item', 
-//                 item: itemToEdit,
-//                 userName: req.user ? req.user.username : ''
-//             })
-//         }
-//     });
-// }
-
-
+//logic to process edit survey items
 module.exports.processEdit = (req, res, next) => {
 
     let id = req.params.id
 
-    // let updatedItem = Survey({
-    //     _id: req.body.id,
-    //     item: req.body.item,
-    //     qty: req.body.qty,
-    //     status: req.body.status,
-        
-    // });
 
     let updatedItem = new Survey(req.body)
 
@@ -107,9 +72,7 @@ module.exports.processEdit = (req, res, next) => {
         }
         else
         {
-            // console.log(req.body);
-            // refresh the book list
-            // res.redirect('/survey/list');
+            
             res.status(200).json(updatedItem); 
         }
     });
@@ -134,8 +97,7 @@ module.exports.performDelete = (req, res, next) => {
         }
         else
         {
-            // refresh the book list
-            // res.redirect('/survey/list');
+            
             res.status(200).json(
                 {
                     success: true,
@@ -148,27 +110,10 @@ module.exports.performDelete = (req, res, next) => {
 }
 
 
-// module.exports.displayAddPage = (req, res, next) => {
 
-//     let newItem = Survey();
-
-//     res.render('survey/add_edit', {
-//         title: 'Add a new Survey',
-//         item: newItem,
-//         userName: req.user ? req.user.username : ''
-//     })          
-
-// }
-
+//logic to process add survey items
 module.exports.processAdd = (req, res, next) => {
 
-    // let newItem = Survey({
-    //     _id: req.body.id,
-    //     item: req.body.item,
-    //     qty: req.body.qty,
-    //     status: req.body.status,
-        
-    // });
 
     console.log(req.body);
 
@@ -190,7 +135,6 @@ module.exports.processAdd = (req, res, next) => {
         {
             // refresh the book list
             console.log(item);
-            // res.redirect('/survey/list');
             res.status(200).json(item); 
         }
     });

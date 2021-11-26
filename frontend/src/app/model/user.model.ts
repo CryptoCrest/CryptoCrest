@@ -1,5 +1,6 @@
 export class User {
 
+    //constructor storing user model
     constructor(
         public firstName?: string,
         public lastName?: string,

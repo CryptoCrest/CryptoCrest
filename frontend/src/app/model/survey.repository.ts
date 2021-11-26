@@ -13,14 +13,17 @@ export class SurveyRepository {
         });
     }
 
+    //gets survey
     getSurvey(): Survey[] {
         return this.survey;
     }
 
+    //gets item by id
     getItem(id: string): Survey {
         return (this.survey.find(item => item._id === id)!);
     }
 
+    //saves survey from user
     saveSurvey(item: Survey) {
         if (item._id == null || item._id == "") {
             this.dataSource.insertSurvey(item)
@@ -34,6 +37,7 @@ export class SurveyRepository {
         }
     }
 
+    //deletes survey
     deleteSurvey(id: string) {
         this.dataSource.deleteSurvey(id).subscribe(response => {
             if (response.success) {

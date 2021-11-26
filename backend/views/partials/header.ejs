@@ -31,7 +31,7 @@
                   <i class="fas fa-home"></i> Home </a>
               </a>
             </li>
-            
+            <!-- Drop Down For Survey List -->
             <li class="nav-item dropdown">
               <% if (title == "Survey List" || title == "Add a new Item") { %>
                 <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Survey</a>
@@ -43,12 +43,11 @@
                 <li><a class="dropdown-item" href="/survey/add">Add a new Item</a></li>
               </ul>
             </li>
-            
             <li class="nav-item">  
               <% if (typeof userName == 'string' && userName) { %>
                 <a class="nav-link" href="/users/signout" onclick="return confirm('Are you sure?')">Sign Out (<%= userName %>)</a>
               <% } else { %>
-                <a class="nav-link" href="/users/signin">Signin</a>
+                <a class="nav-link" href="/users/signin">Sign In</a>
               <% } %>            
             </li> 
           </ul>

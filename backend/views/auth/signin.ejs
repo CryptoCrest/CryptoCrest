@@ -8,6 +8,7 @@
             <% for(var i in messages) { %>
                 <div class="flash"><%= messages[i] %></div>
             <% } %>
+            <!-- Sign-in Page -->
             <form action="/users/signin" method="post">
                 <div class="form-group">
                     <label>Username:</label>
@@ -25,7 +26,7 @@
                 <div class="form-group">
                     <a href="/users/signup" style="text-decoration: none">                
                         <i class="fas fa-user-plus"></i> 
-                        Signup
+                        Sign-up
                     </a>
                 </div>
             </form>

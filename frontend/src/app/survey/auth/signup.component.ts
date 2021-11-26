@@ -9,14 +9,11 @@ import { User } from "../../model/user.model";
 })
 
 export class SignUpComponent {
-
     public user: User = new User();
     public confirmPassowrd: string;
     public message: string;
-
     constructor(private router: Router,
         private auth: AuthService) { }
-
     signup(form: NgForm) {
         if (form.valid) {
             // Checks if the passwords match.

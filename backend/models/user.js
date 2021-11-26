@@ -2,6 +2,7 @@ let mongoose = require('mongoose');
 let crypto = require('crypto');
 let Schema = mongoose.Schema;
 
+//model class for User
 let UserSchema = mongoose.Schema(
     {
         firstName: String,
@@ -37,6 +38,7 @@ let UserSchema = mongoose.Schema(
         }
     },
     {
+        //stores info in collection called user
         collection: "user"
     }
 );

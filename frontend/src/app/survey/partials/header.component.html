@@ -14,7 +14,7 @@
                 <i class="fas fa-home"></i> Home
               </a>
             </li>
-            
+            <!-- Drop down menu for Survey List -->
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Survey</a>   
               <ul class="dropdown-menu">
@@ -22,19 +22,13 @@
                 <li><a class="dropdown-item" routerLink="/survey/add_edit">Add a new Item</a></li>
               </ul>
             </li>
-            
             <li class="nav-item">
-              <!-- <% if (typeof userName == 'string' && userName) { %> -->
-                <!-- <a class="nav-link" href="/users/signout" onclick="return confirm('Are you sure?')">Sign Out (<%= userName %>)</a> -->
-                <!-- <a class="nav-link" routerLink="/users/signin">Signin</a>-->
                 <a *ngIf="auth.username != null" class="nav-link" routerLink="" (click)="logout()">Sign Out ({{ auth.username }})</a>
-                <a *ngIf="auth.username == null" class="nav-link" routerLink="/users/signin">Signin</a>
-
-
+                <a *ngIf="auth.username == null" class="nav-link" routerLink="/users/signin">Sign In</a>
             </li> 
           </ul>
-        </div>
       </div>
+    </div>
     </nav>
     <br>
     <br>

@@ -5,6 +5,7 @@ import { RestDataSource } from "./rest.datasource";
 import { User } from "./user.model";
 import { ResponseModel } from "./response.model";
 
+//Logic for Authentication
 @Injectable()
 export class AuthService {
 

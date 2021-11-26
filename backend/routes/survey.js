@@ -28,7 +28,7 @@ router.get('/get-item/:id', surveyController.surveyByID, surveyController.getIte
 // router.get('/edit/:id', requireAuth, surveyController.displayEditPage);
 router.put('/edit/:id', passport.authenticate('jwt', { session: false }), surveyController.processEdit);
 
-// Delete
+// Router to Delete
 router.delete('/delete/:id', passport.authenticate('jwt', { session: false }), surveyController.performDelete);
 
 

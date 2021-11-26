@@ -11,10 +11,10 @@ let passport = require('passport');
 //   });
 // });
 
-// router.get('/signup', usersController.renderSignup);
+// routes sign up page
 router.post('/signup', usersController.signup);
 
-// router.get('/signin', usersController.renderSignin);
+// routers sign in page
 router.post('/signin', usersController.signin);
 
 // router.get('/signout', usersController.signout);

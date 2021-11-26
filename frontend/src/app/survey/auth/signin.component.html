@@ -1,20 +1,14 @@
-<!-- <% include ../partials/header.ejs %> -->
-<app-header></app-header>
 
+<app-header></app-header>
 <div class="container">
     <div class="row">
-
         <div class="offset-md-3 col-md-3">
             <h1>Sign In</h1>
-            <!-- <% for(var i in messages) { %>
-                <div class="flash"><%= messages[i] %></div>
-            <% } %> -->
-
+            <!-- message div for any error -->
             <div class="bg-danger mt-2 p-2 text-center text-white" *ngIf="message != null">
                 {{message}}
             </div>
-
-            <!-- <form action="/users/signin" method="post"> -->
+            <!-- form fro sign in -->
             <form novalidate #form="ngForm" (ngSubmit)="authenticate(form)">
                 <div class="form-group">
                     <label>Username:</label>
@@ -37,11 +31,6 @@
                 </div>
             </form>
         </div>
-        <div>
-                        
-        </div>
     </div>
 </div>
-<!-- <% include ../partials/footer.ejs %>
- -->
  <app-footer></app-footer>

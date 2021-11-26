@@ -1,17 +1,14 @@
 <app-header></app-header>
-
 <div class="container">
     <div class="row">
-
         <div class="offset-md-3 col-md-3">
             <h1>Sign Up</h1>
-
+            <!-- Message div for error -->
             <div class="bg-danger mt-2 p-2 text-center text-white" *ngIf="message != null">
                 {{message}}
             </div>
-
+            <!-- Form for sign up -->
             <form novalidate #form="ngForm" (ngSubmit)="signup(form)">
-            <!-- <form action="/users/signup" method="post" validate> -->
                 <div class="form-group">
                     <label>First Name:</label>
                     <input type="text" name="firstName" [(ngModel)]="user.firstName" class="form-control"/>
@@ -44,5 +41,4 @@
         </div>
     </div>
 </div>
-
 <app-footer></app-footer>
