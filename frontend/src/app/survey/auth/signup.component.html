@@ -1,14 +1,14 @@
 <app-header></app-header>
-<div class="container">
-    <div class="row">
-        <div class="offset-md-3 col-md-3">
+<div class="container" style="background-color: #b3e6ff;height: 1030px; ">
+    <div class="row" >
+        <div class="offset-md-3 col-md-3" style="margin-top: 20px;">
             <h1>Sign Up</h1>
             <!-- Message div for error -->
             <div class="bg-danger mt-2 p-2 text-center text-white" *ngIf="message != null">
                 {{message}}
             </div>
             <!-- Form for sign up -->
-            <form novalidate #form="ngForm" (ngSubmit)="signup(form)">
+            <form novalidate #form="ngForm" (ngSubmit)="signup(form)" style="margin-top: 30px;">
                 <div class="form-group">
                     <label>First Name:</label>
                     <input type="text" name="firstName" [(ngModel)]="user.firstName" class="form-control"/>
@@ -35,7 +35,7 @@
                 </div>
                 <br>
                 <div>
-                    <input class="btn btn-primary" type="submit" value="Sign up" />
+                    <input class="btn btn-primary" type="submit" value="CREATE ACCOUNT" />
                 </div>
             </form>
         </div>

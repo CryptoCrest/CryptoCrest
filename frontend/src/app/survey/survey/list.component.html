@@ -3,11 +3,11 @@
   <!-- Main Content -->
   <main class="container" >
     <div class="row">
-        <h1>Survey List</h1>
+        <h1 style= "text-align: center"><i class="fas fa-poll-h" style="color: #3385ff;"></i> Survey List</h1>
         <br>
         <div>
             <br>
-            <a routerLink="/survey/add" class="btn btn-primary align-self-end" role="button">
+            <a routerLink="/survey/add" class="btn btn-primary align-self-end" role="button" style="background-color: #ffdb4d; border-color: #ffdb4d; color: black; font-weight: bolder;">
                 <i class="fas fa-plus-circle"></i> 
                 Add a new Survey
             </a> 
@@ -17,7 +17,7 @@
             <br>          
             <table class="table table-bordered table-striped table-hover">
                 <!-- Header Row-->
-                <tr>
+                <tr style="background-color: #3385ff; color: white; font-weight:bolder;">
                     <th class="text-center">Survey Name</th>
                     <th class="text-center">Number of questions</th>
                     <th class="text-center">Description</th>
@@ -42,4 +42,10 @@
             </table>
         </div>
    </main>
+   <style>
+ tr:nth-child(odd) {
+  background-color: #e6eeff;
+}
+
+   </style>
   <app-footer> </app-footer>
