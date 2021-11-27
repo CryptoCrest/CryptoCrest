@@ -23,7 +23,7 @@
               </ul>
             </li>
             <li class="nav-item">
-                <a *ngIf="auth.username != null" class="nav-link" routerLink="" (click)="logout()">Sign Out ({{ auth.username }})</a>
+                <a *ngIf="auth.username != null" class="nav-link" routerLink="" (click)="logout()"><i class="fas fa-external-link-alt"></i> Sign Out ({{ auth.username }})</a>
                 <a *ngIf="auth.username == null" class="nav-link" routerLink="/users/signin"> <i class="fas fa-sign-in-alt"></i> Sign In</a>
             </li> 
           </ul>
