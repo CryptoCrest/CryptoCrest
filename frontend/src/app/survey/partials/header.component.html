@@ -16,15 +16,15 @@
             </li>
             <!-- Drop down menu for Survey List -->
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Survey</a>   
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"> <i class="fas fa-poll"></i> Survey</a>   
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" routerLink="/survey/list">Survey List</a></li>
-                <li><a class="dropdown-item" routerLink="/survey/add_edit">Add a new Item</a></li>
+                <li><a class="dropdown-item" routerLink="/survey/list"><i class="fas fa-list-ul"></i> Survey List</a></li>
+                <li><a class="dropdown-item" routerLink="/survey/add_edit"> <i class="fas fa-plus-circle"></i> Add a new Item</a></li>
               </ul>
             </li>
             <li class="nav-item">
                 <a *ngIf="auth.username != null" class="nav-link" routerLink="" (click)="logout()">Sign Out ({{ auth.username }})</a>
-                <a *ngIf="auth.username == null" class="nav-link" routerLink="/users/signin">Sign In</a>
+                <a *ngIf="auth.username == null" class="nav-link" routerLink="/users/signin"> <i class="fas fa-sign-in-alt"></i> Sign In</a>
             </li> 
           </ul>
       </div>
