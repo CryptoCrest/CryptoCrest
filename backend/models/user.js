@@ -10,6 +10,7 @@ let UserSchema = mongoose.Schema(
         email: {
             type: String,
             match: [/.+\@.+\..+/, "Please fill a valid e-mail address"]
+            
         },
         username: {
             type: String,
@@ -19,10 +20,13 @@ let UserSchema = mongoose.Schema(
         },
         password: {
             type: String,
+            
             validate: [(password) => {
                 return password && password.length > 6;
             }, 'Password should be longer']
+        
         },
+
         salt: {
             type: String
         },
