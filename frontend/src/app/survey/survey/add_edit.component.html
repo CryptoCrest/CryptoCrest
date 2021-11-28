@@ -1,58 +1,67 @@
 <app-header></app-header>
+
+<div class="main_div" style="background-image:url('../../assets/work3.png'); height: 850px;">
 <!-- Content for the Add_Edit page -->
-<div class="container" style="background-color: #b3e6ff;height: 600px;">
+<div class="container_div" style="padding-top: 30px; width: 55%; height: 850px; ">
     <div class="row">
-        <div class="offset-md-3 col-md-6">
-            <h1 style= "text-align: center;" style="margin-top: 20px;">{{editing ? "Edit" : "Add a new"}} survey</h1>
-            <!-- form to enter survey info -->
-            <form novalidate #form="ngForm" (ngSubmit)="save(form)" style="margin-top: 20px;">
+        <div class="container_header">
+            <h1>{{editing ? "Edit" : "Add a new"}} Item</h1>
+
+            <form novalidate #form="ngForm" (ngSubmit)="save(form)">
+                <!-- <form class="form" method="POST"> -->
                     <div class="form-group">
                         <input type="hidden"
                             name="id"
                             [(ngModel)]="item._id"
                         >
-                        <label for="itemTextField">Survey Name</label>
-                        <input type="text" class="form-control"
+                        
+                        <input type="text" 
                             id="itemTextField"
                             placeholder="Enter the Item Name"
                             name="item" 
                             [(ngModel)]="item.item"
                             required>
                     </div>
-                <br />
-                    <div class="form-group">
-                        <label for="QtyTextField">No. of questions</label>
-                        <input type="number" class="form-control"
-                            id="QtyTextField"
-                            placeholder="00"
-                            name="qty" 
-                            [(ngModel)]="item.qty"
-                            required>
-                    </div>
-                <br />
-                    <div class="form-group">
-                        <label for="statusTextField">Description</label>
-                        <input type="text" class="form-control"
-                            id="statusTextField"
-                            placeholder="Enter a status"
-                            name="status" 
-                            [(ngModel)]="item.status"
-                        >
-                    </div>
+                
+                <div class="form-group">
+                    
+                    <input type="number" 
+                    id="QtyTextField"
+                    placeholder="Enter number of questions"
+                    name="qty" 
+                    [(ngModel)]="item.qty"
+                    required>
+                </div>
+                
+                <div class="form-group">
+                   
+                    <input type="text" 
+                    id="statusTextField"
+                    placeholder="Enter a Description"
+                    name="status" 
+                    [(ngModel)]="item.status"
+                    >
+                </div>
+               
                 <br/>
-                <!-- Submit Button -->
-                <button class="btn btn-primary" type="submit" style="margin-right: 10px;">
+
+                <button type="submit">
                     <i class="fas fa-edit"></i> 
                     Submit
                 </button>
-                <!-- Cancel Button -->
-                <a routerLink="/survey/list" class="btn btn-warning">
+                <button routerLink="/survey/list" >
                     <i class="fas fa-undo"></i> 
                     Cancel
-                </a>
+                </button>
+
             </form>
         </div>
     </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <app-footer></app-footer>
+    </div>
 </div>
 
-<app-footer></app-footer>
