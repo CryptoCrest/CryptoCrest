@@ -129,8 +129,8 @@ input{
 }
 input::placeholder{
   color:white;
-  opacity:0.6;
-  font-size:14px;
+  opacity:0.8;
+  font-size:17px;
   font-weight: bold;
 }
 
@@ -139,6 +139,7 @@ button{
   color:#fff;
   background:black;
   border:1px solid white;
+  font-size: 19px;
    
   letter-spacing:1px; 
   margin:20px auto;
@@ -150,7 +151,8 @@ button{
 button:hover{
   color:black;
   opacity:1;
-  background:transparent;
+  font-weight: bold;
+  background:rgba(204, 204, 255,0.6);
   transition:all 0.5s ease;
 }
 
@@ -161,7 +163,7 @@ a {
   text-decoration: none;
 }
 a:hover{
-  color: #FFBCBC;
+  color: #9999ff;
 }
 
 /* Styling unorder lists */

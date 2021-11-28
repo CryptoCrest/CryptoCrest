@@ -6,25 +6,24 @@
     <main class="container_div" style="padding-top: 40px;height: 850px;">
         <div class="container_header">
 
-            <h1>Survey List</h1>
+            <h1><i class="fas fa-poll-h" style="color: #1a75ff;"></i>  Survey List</h1>
         </div>
         <div>
-            <br>
             <div>
                 <br>
-                <a routerLink="/survey/add" class="btn btn-primary align-self-end" role="button">
+                <a routerLink="/survey/add" class="btn btn-primary align-self-end" role="button" style="background-color: #ffdb4d; border-color: #ffdb4d; color: black; font-weight: bolder;">
                     <i class="fas fa-plus-circle"></i>
                     Add a new Survey
                 </a>
             </div>
-
+            <br/>
         </div>
 
         <div class="table">
             <br>
             <table>
                 <!-- Header Row-->
-                <tr>
+                <tr style="background-color: #3385ff; color: white; font-weight:bolder;">
                     <th>Survey Name</th>
                     <th>Number of questions</th>
                     <th>Description</th>
@@ -58,6 +57,14 @@
         </div>
     </main>
 </div>
+
+<style>
+   tr:nth-child(odd) {
+  background-color: rgba(204, 204, 255,0.6);
+  color: black;
+}
+   
+      </style>
 
 
 <!-- <%- include ../partials/footer.ejs %> -->
