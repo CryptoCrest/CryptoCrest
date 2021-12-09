@@ -1,0 +1,64 @@
+<app-header></app-header>
+
+<div class="main_div" style="background-image:url('../../assets/work3.png'); height: 850px;">
+<!-- Content for the Add_Edit page -->
+<div class="container_div" style="padding-top: 30px; width: 55%; height: 850px; ">
+    <div class="row">
+        <div class="container_header">
+            <h1>{{editing ? "Edit" : "Add a new"}} Item</h1>
+
+            <form novalidate #form="ngForm" (ngSubmit)="save(form)">
+                <!-- <form class="form" method="POST"> -->
+                    <div class="form-group">
+                        <input type="hidden"
+                            name="id"
+                            [(ngModel)]="item._id"
+                        >
+                        
+                        <input type="text" 
+                            id="itemTextField"
+                            placeholder="Enter the Item Name"
+                            name="item" 
+                            [(ngModel)]="item.item"
+                            required>
+                    </div>
+                
+                <div class="form-group">
+                    
+                    <input type="number" 
+                    id="QtyTextField"
+                    placeholder="Enter number of questions"
+                    name="qty" 
+                    [(ngModel)]="item.qty"
+                    required>
+                </div>
+                
+                <div class="form-group">
+                   
+                    <input type="text" 
+                    id="statusTextField"
+                    placeholder="Enter a Description"
+                    name="status" 
+                    [(ngModel)]="item.status"
+                    >
+                </div>
+               
+                <br/>
+
+                <button type="submit">
+                    <i class="fas fa-edit"></i> 
+                    Submit
+                </button>
+                <button routerLink="/survey/list" >
+                    <i class="fas fa-undo"></i> 
+                    Cancel
+                </button>
+
+            </form>
+        </div>
+    </div>
+  
+    <app-footer></app-footer>
+    </div>
+</div>
+

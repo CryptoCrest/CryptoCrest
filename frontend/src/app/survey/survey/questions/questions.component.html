@@ -1,0 +1,75 @@
+<app-header></app-header>
+
+<div class="main_div" style="background-image:url('../../assets/work3.png'); height: 850px;">
+<!-- Content for the Add_Edit page -->
+<div class="container_div" style="padding-top: 30px; width: 55%; height: 850px; ">
+    <div class="row">
+        <div class="container_header">
+            <h3>Survey Name: {{item.item}}</h3>
+            <h3>Survey Description: {{item.status}}</h3>
+            <h3>Please Enter {{item.qty}} Questions for the Survey</h3>
+            
+            <form novalidate #form="ngForm" (ngSubmit)="save(form)">
+                <!-- <form class="form" method="POST"> -->
+                    <div class="form-group">
+                        <input type="hidden"
+                            name="id"
+                            [(ngModel)]="question._id"
+                        >
+                        
+                        <input type="text" 
+                            id="questionTextField"
+                            placeholder="Enter the Question"
+                            name="ques" 
+                            #ques
+                            [(ngModel)]="question.ques"
+                            required>
+                    </div>
+                
+                <div class="form-group">
+                    
+                    <input type="text" 
+                    id="option1TextField"
+                    placeholder="Enter option 1"
+                    name="option1" 
+                    #option1
+                    [(ngModel)]="question.option1"
+                    required>
+                </div>
+                
+                <div class="form-group">
+                   
+                    <input type="text" 
+                    id="option2TextField"
+                    placeholder="Enter Option 2"
+                    name="option2" 
+                    #option2
+                    [(ngModel)]="question.option2"
+                    >
+
+                    <button (click)="addQuestions(ques.value, option1.value, option2.value)">Add</button>
+                </div>
+               
+                <br/>
+
+                <button type="submit">
+                    <i class="fas fa-edit"></i> 
+                    Submit
+                </button>
+                <button routerLink="/survey/list" >
+                    <i class="fas fa-undo"></i> 
+                    Cancel
+                </button>
+
+            </form>
+        
+         <h3>Total Questions Added: {{item.surveyQuestions.length}}</h3>
+
+               
+
+        </div>
+    </div>
+  
+    <app-footer></app-footer>
+    </div>
+</div>

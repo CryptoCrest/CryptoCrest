@@ -1,0 +1,175 @@
+
+/* styles for main div */
+.main_div{
+  position:relative;
+  width: 100%;
+  height: fit-content;
+  background-size:cover;
+  background-position:center;
+  position: relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding-bottom:0px;
+  padding-top: 0px;
+}
+
+/* style for container div */
+.container_div{
+  background-color:rgba(0,0,0,0.6);
+  width:55vw;
+  height:900px; 
+  padding-top: 30px;
+  padding-bottom: 0px;
+}
+
+/* Styling the header */
+.container_header h1{
+  font-size: 50px;
+  font-family: 'Oxygen';
+  font-weight: 700;
+  text-align: center;
+  color: #dfdfdf;
+  line-height: 100px;
+  padding: 0px;
+  height: fit-content;
+  }	
+
+/* Styling the elements of the main container */
+.content{
+  font-size: 25px;
+  font-family: 'Opera';
+  font-weight: 700;
+  text-align: center;
+  color: #A1CAE2;
+  line-height: 50px;
+  margin: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
+  height: fit-content;
+      
+}
+/* Styling the customized footer on each page */
+.footer{
+  font-size: 15px;
+  position:relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color:transparent;
+  color: white;
+  text-align: center;
+}
+
+/* Styling logo on about page by rounding the borders */
+.id{
+  border-radius: 50%
+}
+
+/* Styling the table used in projects and services */
+table {
+  font-family: 'papyrus';
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 5px solid white;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Styling data of tr in projects page */
+.proj{
+  width: 30%;
+  height: 30%;
+  background-color: black;
+}
+
+h3{
+  color: #FFBCBC;
+  text-decoration: underline;
+}
+
+/* Styling data of tr in services page */
+.projServices{
+  width: 20%;
+  height: 10%;
+  background-color: transparent;
+  border-style: none;
+}
+
+/* Stylings */
+input{
+  width:30vw;
+  height: 60px;
+  padding:12px 20px;
+  display:block;
+  box-sizing:border-box;
+  outline:none;
+  text-align:center;
+  margin:20px auto;
+  background-color: transparent;
+  color:white;
+  border:1px solid #fff;
+  opacity:0.8;
+  font-size:16px;
+}
+input::placeholder{
+  color:white;
+  opacity:0.6;
+  font-size:14px;
+  font-weight: bold;
+}
+
+/* Styling buttons */
+button{   
+  color:#fff;
+  background:black;
+  border:1px solid white;
+  padding:0px 30px; 
+  letter-spacing:1px; 
+  margin:10px auto;
+  display:block;
+  transition: all 0.5s ease;
+  height: 9%;
+}
+button:hover{
+  color:black;
+  opacity:1;
+  background:transparent;
+  transition:all 0.5s ease;
+}
+
+/* Styling links */
+a {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover{
+  color: #FFBCBC;
+}
+
+/* Styling unorder lists */
+ul{
+  list-style-type: none;
+}
+
+/* styling horizontal lines in dotted form */
+hr{
+  border-style: none;
+  border-top-style: dotted;
+  border-width: 12px;
+  width: 25%;
+  border-color: white;
+  background-color: transparent;
+  justify-content: center;
+  margin-left: 39%;
+  position: relative;
+}
+
+
+.flash{
+  color: red;
+}

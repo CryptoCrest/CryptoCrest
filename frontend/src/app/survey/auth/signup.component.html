@@ -1,0 +1,49 @@
+<app-header></app-header>
+
+<div class="main_div" style="background-image:url('../../assets/work1.png'); height: 800px;">
+    <div class="container_div" style="padding-top: 30px; width: 55%; height: 800px; ">
+    <div class="row">
+
+        <div class="container_header">
+            <h1>Sign-Up</h1>
+</div>
+            <div class="bg-danger mt-2 p-2 text-center text-white" *ngIf="message != null">
+                {{message}}
+            </div>
+
+            <form novalidate #form="ngForm" (ngSubmit)="signup(form)">
+            <!-- <form action="/users/signup" method="post" validate> -->
+                <div class="form-group">
+                    <input type="text" name="firstName" [(ngModel)]="user.firstName" placeholder="Enter your first name:"/>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="lastName" [(ngModel)]="user.lastName" placeholder="Enter your last name:"/>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="email" [(ngModel)]="user.email" placeholder="Enter your email:" />
+                </div>
+                <div class="form-group">
+                    <input type="text" name="username" [(ngModel)]="user.username" placeholder="Enter your Username:" >
+                </div>
+                <div class="form-group">
+                    
+                    <input type="password" name="password" [(ngModel)]="user.password" placeholder="Password must include uppercase, lowercase and number"/>
+ 
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password_confirm" [(ngModel)]="confirmPassowrd" placeholder="Confirm Password:" />
+                </div>
+                <br>
+                <div>
+                    <button type="submit" value="Sign up"> Signup </button>
+                </div>
+            </form>
+        </div>
+            <br>
+            <br>
+            <br>
+            <app-footer></app-footer>
+    
+</div>
+</div>
+

@@ -1,0 +1,49 @@
+<!-- <% include ../partials/header.ejs %> -->
+<app-header></app-header>
+
+<div class="main_div" style="background-image:url('../../assets/work1.png'); height: 750px;">
+<div class="container_div" style="padding-top: 30px; width: 55%; height: 750px; ">
+    <div class="row">
+
+        <div class="container_header">
+            <h1>Sign-In</h1>
+            <!-- <% for(var i in messages) { %>
+                <div class="flash"><%= messages[i] %></div>
+            <% } %> -->
+        </div>
+    <div>
+            <div class="bg-danger mt-2 p-2 text-center text-white" *ngIf="message != null">
+                {{message}}
+            </div>
+
+            <!-- <form action="/users/signin" method="post"> -->
+            <form novalidate #form="ngForm" (ngSubmit)="authenticate(form)">
+        
+                    <input type="text" name="username" [(ngModel)]="username" placeholder="Enter your user name:" />
+
+                    <input type="password" name="password" [(ngModel)]="password" placeholder="Enter your password:" />
+            
+                <div>
+                    <hr>        
+
+                    <button type="submit">Sign In</button> 
+                    <p style="text-align: center; color: aliceblue; font-size: 17px;">Dont have an account?<br> <a href="/users/signup" style="text-decoration: none;">                
+                        <i class="fas fa-user-plus"></i> 
+                        Signup
+                    </a></p>
+                    
+            
+                </div>
+            </form>
+        </div>
+        <div>
+                        
+        </div>
+    </div>
+    <app-footer></app-footer>
+    
+</div>
+</div>
+<!-- <% include ../partials/footer.ejs %>
+ -->
+ 
