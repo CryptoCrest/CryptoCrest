@@ -6,6 +6,7 @@ import { User } from "./user.model";
 import { map } from "rxjs/operators";
 import { HttpHeaders } from '@angular/common/http';
 import { Question } from "./question.model";
+import { Completed } from "./completed.model";
 
 import { ResponseModel } from "./response.model";
 
@@ -31,6 +32,11 @@ export class RestDataSource {
     //insert survey items
     insertSurvey(item: Survey): Observable<Survey> {
         return this.http.post<Survey>(this.baseUrl + "survey/add",
+            item, this.getOptions());
+    }
+
+    insertCompletedSurvey(item: Completed): Observable<Completed> {
+        return this.http.post<Completed>(`${this.baseUrl}viewQues/${item.surveyId}`,
             item, this.getOptions());
     }
 

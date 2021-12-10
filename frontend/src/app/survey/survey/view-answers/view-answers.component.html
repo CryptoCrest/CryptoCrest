@@ -1,0 +1,45 @@
+<app-header> </app-header>
+
+<!-- Main Content -->
+<div class="main_div" style="background-image:url('../../assets/work.png');height: 850px;">
+    <main class="container_div" style="padding-top: 40px;height: 850px;">
+        <div class="container_header">
+
+        <h3>Survey Name: {{item.item}}</h3>
+        <h3>Survey Description: {{item.status}}</h3>
+        </div>
+
+        <div class="table">
+            <br>
+            <table>
+                <!-- Header Row-->
+                <tr style="background-color: #3385ff; color: white; font-weight:bolder;">
+                    <th>Question</th>
+                    <th>User Answer</th>
+                </tr>
+
+                <!-- Repeatable Template Row -->
+                <tr *ngFor="let question of item.surveyQuestions; let i=index">
+                    <!--<form #form="ngForm">-->
+                    <td>{{question.ques }}</td>
+                    <td>{{question.userAnswer}}</td>
+                   
+            
+
+            </table>
+           
+            <app-footer> </app-footer>
+        </div>
+    </main>
+</div>
+
+<style>
+   tr:nth-child(odd) {
+  background-color: rgba(204, 204, 255,0.6);
+  color: black;
+}
+   
+      </style>
+
+
+<!-- <%- include ../partials/footer.ejs %> -->

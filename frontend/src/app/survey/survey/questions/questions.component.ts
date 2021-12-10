@@ -26,17 +26,19 @@ export class QuestionsComponent implements OnInit {
   }
   
   addQuestions(ques: string, option1:string, option2:string){
+    this.count++;
     this.question.ques=ques;
     this.question.option1=option1;
     this.question.option2=option2;
-    this.item.surveyQuestions.push(this.question);
-    this.count++;
-    window.alert("questions added: " +this.count);
+    let totalcount=this.item.surveyQuestions.length+this.count
+    window.alert("item added:"+totalcount)
 
   }
   
   save(form: NgForm) {
+    this.item.surveyQuestions.push(this.question);
     this.repository.saveSurvey(this.item);
+    this.router.navigateByUrl('/survey/list');
     console.log(this.item);
 }
 

@@ -7,10 +7,12 @@ import { PartialsModule } from '../partials/partials.module';
 import { ListComponent } from "./list.component";
 import { AddEditComponent } from "./add_edit.component";
 import { QuestionsComponent } from './questions/questions.component';
+import { AnswersComponent } from './answers/answers.component';
+import { ViewAnswersComponent } from './view-answers/view-answers.component';
 
 @NgModule({
     imports: [ModelModule, BrowserModule, FormsModule, RouterModule, PartialsModule],
-    declarations: [ListComponent, AddEditComponent, QuestionsComponent],
+    declarations: [ListComponent, AddEditComponent, QuestionsComponent, AnswersComponent, ViewAnswersComponent],
     exports : [ListComponent, AddEditComponent]
 })
 

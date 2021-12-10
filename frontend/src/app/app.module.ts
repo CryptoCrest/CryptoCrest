@@ -15,6 +15,8 @@ import { SignInComponent } from './survey/auth/signin.component';
 import { SignUpComponent } from './survey/auth/signup.component';
 import { AddEditComponent } from './survey/survey/add_edit.component';
 import { QuestionsComponent } from './survey/survey/questions/questions.component';
+import { AnswersComponent } from './survey/survey/answers/answers.component';
+import { ViewAnswersComponent } from './survey/survey/view-answers/view-answers.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,8 @@ import { QuestionsComponent } from './survey/survey/questions/questions.componen
       { path: "addQues/:id", component: QuestionsComponent,
        canActivate:[AuthGuard]
       },
+      {path:"viewQues/:id", component:AnswersComponent, canActivate:[AuthGuard]},
+      {path:"viewAns/:id", component: ViewAnswersComponent},
      { path: "**", redirectTo: "" }
     ])
   ],

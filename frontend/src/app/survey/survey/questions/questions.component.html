@@ -9,13 +9,9 @@
             <h3>Survey Description: {{item.status}}</h3>
             <h3>Please Enter {{item.qty}} Questions for the Survey</h3>
             
-            <form novalidate #form="ngForm" (ngSubmit)="save(form)">
+            <form novalidate #form="ngForm">
                 <!-- <form class="form" method="POST"> -->
                     <div class="form-group">
-                        <input type="hidden"
-                            name="id"
-                            [(ngModel)]="question._id"
-                        >
                         
                         <input type="text" 
                             id="questionTextField"
@@ -52,7 +48,8 @@
                
                 <br/>
 
-                <button type="submit">
+                <button (click)="save(form)"
+                type="submit">
                     <i class="fas fa-edit"></i> 
                     Submit
                 </button>

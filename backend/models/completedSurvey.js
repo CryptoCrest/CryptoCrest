@@ -1,16 +1,23 @@
-/*let mongoose = require('mongoose');
+let mongoose = require('mongoose');
 
 //model class for survey
-let questionModel = mongoose.Schema(
+let completed = mongoose.Schema(
     {
-        qNum: Number,
-        ques: String,
-        ans: String,
+        surveyId: mongoose.Schema.Types.ObjectId,
+        surveyDescription: String,
+        questions:
+                [{
+                    _id: String,
+                    ques: String,
+                    option1: String,
+                    option2: String,
+                    userAnswer:String,
+                }]
         
     },
     {
-        collection: "question"
+        collection: "completed"
     }
 );
 
-module.exports = mongoose.model('Question', questionModel);*/
+module.exports = mongoose.model(completed, completedModel);

@@ -11,7 +11,8 @@ let surveyModel = mongoose.Schema(
                 _id: String,
                 ques: String,
                 option1: String,
-                option2: String
+                option2: String,
+                userAnswer:String,
 
             }],
         

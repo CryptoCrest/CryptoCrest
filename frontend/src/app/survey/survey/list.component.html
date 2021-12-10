@@ -55,6 +55,16 @@
                         <a [routerLink]="['/addQues', item._id]" style="margin: 0%;">Add Questions</a>
                     </td>
 
+                    <td class="text-center">
+                        <!-- <a href="/survey/delete/{{item._id }}" class="btn btn-danger btn-sm"> -->
+                        <a [routerLink]="['/viewQues', item._id]" style="margin: 0%;">Answer Questions</a>
+                    </td>
+
+                    <td class="text-center">
+                        <!-- <a href="/survey/delete/{{item._id }}" class="btn btn-danger btn-sm"> -->
+                        <a [routerLink]="['/viewAns', item._id]" style="margin: 0%;">View Answers</a>
+                    </td>
+
                 </tr>
 
             </table>
