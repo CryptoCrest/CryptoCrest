@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
+import { AuthService } from "src/app/model/auth.service";
 import { Survey } from "../../model/survey.model";
 import { SurveyRepository } from "../../model/survey.repository";
 
@@ -9,10 +10,14 @@ import { SurveyRepository } from "../../model/survey.repository";
 })
 
 export class ListComponent {
+    username:string;
 
     constructor(private repository: SurveyRepository,
-        private router: Router) 
-    { }
+        private router: Router,
+        public auth:AuthService) 
+    { 
+        this.username=auth.username;
+    }
 
     get surveyList(): Survey[] {
         return this.repository.getSurvey();        

@@ -62,7 +62,9 @@
 
                     <td class="text-center">
                         <!-- <a href="/survey/delete/{{item._id }}" class="btn btn-danger btn-sm"> -->
-                        <a [routerLink]="['/viewAns', item._id]" style="margin: 0%;">View Answers</a>
+                       
+                        <button [disabled]="this.item.creator!==auth.username" [routerLink]="['/viewAns', item._id]" style="margin: 0%;">View Answers</button>
+                   
                     </td>
 
                 </tr>

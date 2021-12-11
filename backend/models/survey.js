@@ -3,6 +3,8 @@ let mongoose = require('mongoose');
 //model class for survey
 let surveyModel = mongoose.Schema(
     {
+        creator: String,
+        date: Date,
         item: String,
         qty: Number,
         status: String,
