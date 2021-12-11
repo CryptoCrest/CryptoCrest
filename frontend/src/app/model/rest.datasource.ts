@@ -35,10 +35,10 @@ export class RestDataSource {
             item, this.getOptions());
     }
 
-    insertCompletedSurvey(item: Completed): Observable<Completed> {
+    /*insertCompletedSurvey(item: Completed): Observable<Completed> {
         return this.http.post<Completed>(`${this.baseUrl}viewQues/${item.surveyId}`,
             item, this.getOptions());
-    }
+    }*/
 
     //update survey item
     updateSurvey(item: Survey): Observable<Survey> {

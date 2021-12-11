@@ -11,18 +11,16 @@
             <table>
                 <!-- Header Row-->
                 <tr style="background-color: #3385ff; color: white; font-weight:bolder;">
-                    <th>View Answers for Following Respondents</th>
+                    <th>question</th>
+                    <th>answer</th>
                 </tr>
-               
+
                 <!-- Repeatable Template Row -->
-                <tr *ngFor="let completed of completedList">
-                    <span> {{completed.respondent}}</span>
-                    <ul>
-                      <li *ngFor="let question of completed.questions">{{question.ques}} : {{question.userAnswer}} </li>
+                <tr *ngFor="let answer of item.surveyAnswers; let i=index">
+                    <!--<form #form="ngForm">-->
+                    <td><a [routerLink]="['/answerTable', item._id]">{{answer.respondent }}</a>
+                    </td>
                    
-                   </ul>
-            
-            </tr>   
                    
             
 
@@ -40,6 +38,3 @@
 }
    
       </style>
-
-
-<!-- <%- include ../partials/footer.ejs %> -->

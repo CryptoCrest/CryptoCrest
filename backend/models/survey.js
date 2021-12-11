@@ -4,7 +4,8 @@ let mongoose = require('mongoose');
 let surveyModel = mongoose.Schema(
     {
         creator: String,
-        date: Date,
+        startDate: Date,
+        endDate: Date,
         item: String,
         qty: Number,
         status: String,
@@ -17,6 +18,19 @@ let surveyModel = mongoose.Schema(
                 userAnswer:String,
 
             }],
+        surveyAnswers:
+        [{
+                respondent:String,
+                surveyQuestions:
+                 [{
+                _id:String,
+                ques: String,
+                option1:String,
+                option2:String,
+                userAnswer:String,
+                }]
+            }
+        ]
         
     },
     {

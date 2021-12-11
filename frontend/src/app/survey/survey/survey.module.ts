@@ -9,10 +9,11 @@ import { AddEditComponent } from "./add_edit.component";
 import { QuestionsComponent } from './questions/questions.component';
 import { AnswersComponent } from './answers/answers.component';
 import { ViewAnswersComponent } from './view-answers/view-answers.component';
+import { AnswerTableComponent } from './answer-table/answer-table.component';
 
 @NgModule({
     imports: [ModelModule, BrowserModule, FormsModule, RouterModule, PartialsModule],
-    declarations: [ListComponent, AddEditComponent, QuestionsComponent, AnswersComponent, ViewAnswersComponent],
+    declarations: [ListComponent, AddEditComponent, QuestionsComponent, AnswersComponent, ViewAnswersComponent, AnswerTableComponent],
     exports : [ListComponent, AddEditComponent]
 })
 

@@ -11,6 +11,7 @@ import { SurveyRepository } from "../../model/survey.repository";
 
 export class ListComponent {
     username:string;
+    todayDate=Date.now();
 
     constructor(private repository: SurveyRepository,
         private router: Router,

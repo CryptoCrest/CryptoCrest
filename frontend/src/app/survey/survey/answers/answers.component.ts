@@ -6,6 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Completed } from 'src/app/model/completed.model';
+import { AuthService } from 'src/app/model/auth.service';
 @Component({
   selector: 'app-answers',
   templateUrl: './answers.component.html',
@@ -15,15 +16,17 @@ export class AnswersComponent implements OnInit {
   item:Survey=new Survey();
   answers: string[];
   question:Question=new Question();
-  surveyId: string;
-  surveyDescription: string;
+
+  completed:Completed=new Completed();
   questions: Question[];
-  completed: Completed;
+  respondent: string;
 
   constructor(private repository: SurveyRepository,
               private router: Router,
-              private activeRoute:ActivatedRoute) { 
+              private activeRoute:ActivatedRoute,
+              private auth: AuthService) { 
                 this.item = repository.getItem(activeRoute.snapshot.params["id"]);
+                
                 /*this.surveyId=this.item._id;
                 this.surveyDescription=this.item.status;
                 this.questions=this.item.surveyQuestions;
@@ -42,11 +45,13 @@ export class AnswersComponent implements OnInit {
     for (let i=0; i<this.item.surveyQuestions.length; i++){
       this.item.surveyQuestions[i].userAnswer=this.answers[i];
     }
-    //this.completed.questions=this.item.surveyQuestions;
-
-    //this.repository.saveCompletedSurvey(this.completed);
+    this.respondent=this.auth.username;
+    this.questions=this.item.surveyQuestions;
+   this.completed.respondent=this.respondent;
+   this.completed.questions=this.item.surveyQuestions;
+    this.item.surveyAnswers.push(this.completed);
     this.repository.saveSurvey(this.item);
-    console.log(this.completed);
+    console.log(this.item);
     this.router.navigateByUrl("survey/list");
 }
 

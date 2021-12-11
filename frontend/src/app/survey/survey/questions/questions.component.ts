@@ -21,7 +21,7 @@ export class QuestionsComponent implements OnInit {
     activeRoute: ActivatedRoute,
     private auth:AuthService) { 
       this.item = repository.getItem(activeRoute.snapshot.params["id"]);
-      this.questions.length=this.item.qty;
+     // this.questions.length=this.item.qty;
     }
 
   ngOnInit(): void {

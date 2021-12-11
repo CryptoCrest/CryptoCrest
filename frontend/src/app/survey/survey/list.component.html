@@ -27,15 +27,21 @@
                     <th>Survey Name</th>
                     <th>Number of questions</th>
                     <th>Description</th>
-                    <th colspan="2">Actions</th>
+                    <th>Creator</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th colspan="5">Actions</th>
                 </tr>
 
                 <!-- Repeatable Template Row -->
 
                 <tr *ngFor="let item of surveyList">
                     <td>{{item.item }}</td>
-                    <td>{{item.qty }}</td>
+                    <td>{{item.surveyQuestions.length }}</td>
                     <td>{{item.status }}</td>
+                    <td>{{item.creator}}</td>
+                    <td>{{item.startDate | date: 'yyyy-MM-dd'}}</td>
+                    <td>{{item.endDate | date: 'yyyy-MM-dd'}}</td>
 
                     <td class="text-center">
                         <!-- <a href="/survey/edit/{{item._id }}" class="btn btn-primary btn-sm"> -->
@@ -57,7 +63,7 @@
 
                     <td class="text-center">
                         <!-- <a href="/survey/delete/{{item._id }}" class="btn btn-danger btn-sm"> -->
-                        <a [routerLink]="['/viewQues', item._id]" style="margin: 0%;">Answer Questions</a>
+                        <button [routerLink]="['/viewQues', item._id]" style="margin: 0%;">Answer Questions</button>
                     </td>
 
                     <td class="text-center">

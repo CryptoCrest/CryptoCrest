@@ -29,9 +29,9 @@ export class SurveyRepository {
         return (this.survey.find(item => item._id === id)!);
     }
 
-    getCompletedSurvey(id:string): Completed {
+    /*getCompletedSurvey(id:string): Completed {
         return(this.completed.find(item=>item.surveyId===id)!);
-    }
+    }*/
 
     //saves survey from user
     saveSurvey(item: Survey) {
@@ -47,12 +47,12 @@ export class SurveyRepository {
         }
     }
 
-    saveCompletedSurvey(item: Completed) {
+   /* saveCompletedSurvey(item: Completed) {
         {
             this.dataSource.insertCompletedSurvey(item)
                 .subscribe((p: Completed) => this.completed.push(p));
         }
-    }
+    }*/
     
 
     //deletes survey

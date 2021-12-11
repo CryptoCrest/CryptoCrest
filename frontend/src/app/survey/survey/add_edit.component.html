@@ -23,7 +23,7 @@
                             required>
                     </div>
                 
-                <div class="form-group">
+               <!-- <div class="form-group">
                     
                     <input type="number" 
                     id="QtyTextField"
@@ -31,7 +31,25 @@
                     name="qty" 
                     [(ngModel)]="item.qty"
                     required>
+                </div>-->
+                <div class="form-group">
+                   <label for="startDateField">Start Date</label>
+                    <input type="date" 
+                    id="startDateField"
+                    name="startDate" 
+                    placeholder="Start Date"
+                    [(ngModel)]="item.startDate"
+                    >
                 </div>
+                <div class="form-group">
+                    <label for="startDateField">End Date</label>
+                     <input type="date" 
+                     id="endDateField"
+                     name="endDate" 
+                     placeholder="End Date"
+                     [(ngModel)]="item.endDate"
+                     >
+                 </div>
                 
                 <div class="form-group">
                    
@@ -57,7 +75,10 @@
             </form>
         </div>
     </div>
-  
+    <br>
+    <br>
+    <br>
+    <br>
     <app-footer></app-footer>
     </div>
 </div>
