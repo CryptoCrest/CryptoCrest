@@ -8,10 +8,10 @@
 
         <div class="table">
             <br>
-            <table>
+            <table id="exceltable">
                 <!-- Header Row-->
                 <tr style="background-color: #3385ff; color: white; font-weight:bolder;">
-                    <th>Respondent</th>
+                    <th>Respondent: {{item.surveyAnswers.length}}</th>
                     <th>Responses</th>
                 </tr>
                
@@ -27,8 +27,7 @@
             </tr>     
 
             </table>
-            <h3>Total Number of responses: {{item.surveyAnswers.length}}</h3>
-           
+           <button (click)="exportexcel()">Export to Excel</button>
             <app-footer> </app-footer>
         </div>
     </main>

@@ -62,7 +62,7 @@ export class AnswersComponent implements OnInit {
     
     //this.respondent=this.auth.username;
     //this.questions=this.item.surveyQuestions;
-   if(this.auth.username===undefined){
+   if(this.auth.username===null){
      this.completed.respondent="Anonymous";
    }else{
     this.completed.respondent=this.auth.username;

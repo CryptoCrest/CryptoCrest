@@ -58,18 +58,18 @@
 
                     <td class="text-center">
                         <!-- <a href="/survey/delete/{{item._id }}" class="btn btn-danger btn-sm"> -->
-                        <button [disabled]="this.item.creator!==this.auth.username" [routerLink]="['/addQues', item._id]" style="margin: 0%;">Add Questions</button>
+                        <button [disabled]="item.creator!==this.username" [routerLink]="['/addQues', item._id]" style="margin: 0%;">Add Questions</button>
                     </td>
 
                     <td class="text-center">
                         <!-- <a href="/survey/delete/{{item._id }}" class="btn btn-danger btn-sm"> -->
-                        <button [routerLink]="['/viewQues', item._id]" style="margin: 0%;">Answer Questions</button>
+                        <button [disabled]="item.endDate<todayDate" [routerLink]="['/viewQues', item._id]" style="margin: 0%;">Answer Questions</button>
                     </td>
 
                     <td class="text-center">
                         <!-- <a href="/survey/delete/{{item._id }}" class="btn btn-danger btn-sm"> -->
                        
-                        <button [disabled]="this.item.creator!==this.auth.username" [routerLink]="['/viewAns', item._id]" style="margin: 0%;">View Answers</button>
+                        <button [disabled]="item.creator!==this.username" [routerLink]="['/viewAns', item._id]" style="margin: 0%;">View Answers</button>
                    
                     </td>
 

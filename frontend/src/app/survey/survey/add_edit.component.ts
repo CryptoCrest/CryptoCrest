@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { Router, ActivatedRoute } from "@angular/router";
+import { AuthService } from "src/app/model/auth.service";
 import { Survey } from "../../model/survey.model";
 import { SurveyRepository } from "../../model/survey.repository";
 
@@ -16,7 +17,8 @@ export class AddEditComponent {
 
     constructor(private repository: SurveyRepository,
                 private router: Router,
-                activeRoute: ActivatedRoute) 
+                activeRoute: ActivatedRoute,
+                private auth: AuthService) 
     { 
         if (activeRoute.snapshot.params["mode"] == "delete") {
             this.deleteItem(activeRoute.snapshot.params["id"]);
@@ -31,6 +33,7 @@ export class AddEditComponent {
     }
 
     save(form: NgForm) {
+        this.item.creator=this.auth.username;
         this.repository.saveSurvey(this.item);
         this.router.navigateByUrl("survey/list");
     }
