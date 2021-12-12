@@ -58,7 +58,7 @@
 
                     <td class="text-center">
                         <!-- <a href="/survey/delete/{{item._id }}" class="btn btn-danger btn-sm"> -->
-                        <a [routerLink]="['/addQues', item._id]" style="margin: 0%;">Add Questions</a>
+                        <button [disabled]="this.item.creator!==this.auth.username" [routerLink]="['/addQues', item._id]" style="margin: 0%;">Add Questions</button>
                     </td>
 
                     <td class="text-center">
@@ -69,7 +69,7 @@
                     <td class="text-center">
                         <!-- <a href="/survey/delete/{{item._id }}" class="btn btn-danger btn-sm"> -->
                        
-                        <button [disabled]="this.item.creator!==auth.username" [routerLink]="['/viewAns', item._id]" style="margin: 0%;">View Answers</button>
+                        <button [disabled]="this.item.creator!==this.auth.username" [routerLink]="['/viewAns', item._id]" style="margin: 0%;">View Answers</button>
                    
                     </td>
 

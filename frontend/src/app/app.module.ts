@@ -43,7 +43,9 @@ import { ViewAnswersComponent } from './survey/survey/view-answers/view-answers.
       { path: "addQues/:id", component: QuestionsComponent,
        canActivate:[AuthGuard]
       },
-      {path:"viewQues/:id", component:AnswersComponent, canActivate:[AuthGuard]},
+      {path:"viewQues/:id", component:AnswersComponent, 
+      //canActivate:[AuthGuard]
+      },
       {path:"viewAns/:id", component: ViewAnswersComponent},
      { path: "**", redirectTo: "" }
     ])
