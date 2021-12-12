@@ -29,11 +29,12 @@ export class QuestionsComponent implements OnInit {
   
   addQuestions(ques: string, option1:string, option2:string){
     this.count++;
-    this.question.ques=ques;
+   /*this.question.ques=ques;
     this.question.option1=option1;
-    this.question.option2=option2;
+    this.question.option2=option2;*/
+    let question=new Question(ques, option1, option2);
     let totalcount=this.item.surveyQuestions.length+this.count
-    this.item.surveyQuestions.push(this.question);
+    this.item.surveyQuestions.push(question);
     window.alert("item added:"+totalcount)
     this.item.creator=this.auth.username;
     this.repository.saveSurvey(this.item);

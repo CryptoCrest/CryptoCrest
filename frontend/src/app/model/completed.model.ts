@@ -1,10 +1,11 @@
-import { Question } from "./question.model";
+import { Answer } from "./answer.model";
 export class Completed {
 
     //constructor storing question model
     constructor(
         public respondent?: string,
-        public questions?: Array<Question>
+        public answers?: Array<Answer>,
+      
        
     
     ){}

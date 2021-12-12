@@ -5,7 +5,7 @@
     <main class="container_div" style="padding-top: 40px;height: 850px;">
         <div class="container_header">     
     </div>
-
+        
         <div class="table">
             <br>
             <table>
@@ -18,7 +18,7 @@
                 <!-- Repeatable Template Row -->
                 <tr *ngFor="let answer of item.surveyAnswers; let i=index">
                     <!--<form #form="ngForm">-->
-                    <td><a [routerLink]="['/answerTable', item._id]">{{answer.respondent }}</a>
+                    <td>{{answer.respondent }}
                     </td>
                    
                    

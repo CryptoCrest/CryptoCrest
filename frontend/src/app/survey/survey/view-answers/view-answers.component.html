@@ -11,22 +11,23 @@
             <table>
                 <!-- Header Row-->
                 <tr style="background-color: #3385ff; color: white; font-weight:bolder;">
-                    <th>View Answers for Following Respondents</th>
+                    <th>Respondent</th>
+                    <th>Responses</th>
                 </tr>
                
                 <!-- Repeatable Template Row -->
-                <tr *ngFor="let completed of completedList">
-                    <span> {{completed.respondent}}</span>
+                <tr *ngFor="let completed of item.surveyAnswers">
+                    <td> {{completed.respondent}}</td>
+                    <td>
                     <ul>
-                      <li *ngFor="let question of completed.questions">{{question.ques}} : {{question.userAnswer}} </li>
+                      <li *ngFor="let question of completed.answers">{{question.question}} : {{question.answer}} </li>
                    
                    </ul>
-            
-            </tr>   
-                   
-            
+                   </td>
+            </tr>     
 
             </table>
+            <h3>Total Number of responses: {{item.surveyAnswers.length}}</h3>
            
             <app-footer> </app-footer>
         </div>

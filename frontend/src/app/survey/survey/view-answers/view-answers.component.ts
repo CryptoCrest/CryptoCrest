@@ -19,10 +19,6 @@ export class ViewAnswersComponent implements OnInit {
     private router: Router,
     private activeRoute: ActivatedRoute) {
       this.item = repository.getItem(activeRoute.snapshot.params["id"]);
-     this.completedList=this.item.surveyAnswers;
-     for(let i=0; i<this.completedList.length; i++){
-     this.questions=this.item.surveyAnswers[i].questions;
-     }
 
      }
 
