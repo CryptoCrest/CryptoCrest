@@ -18,5 +18,13 @@ router.post('/signup', usersController.signup);
 router.post('/signin', usersController.signin);
 
 // router.get('/signout', usersController.signout);
+//* GET list of items */
+router.get('/userprofile', usersController.userList);
+router.get('/get-item/:id', usersController.userByID, usersController.getItem);
+
+// router.get('/edit/:id', requireAuth, surveyController.displayEditPage);
+router.put('/editUser/:id', passport.authenticate('jwt', { session: false }), usersController.processEditUser);
+
 
 module.exports = router;
+

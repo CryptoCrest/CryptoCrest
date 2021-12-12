@@ -78,3 +78,68 @@ module.exports.signin = function (req, res, next) {
       }
     })(req, res, next);
 }
+
+//logic for getting user list
+module.exports.userList = function(req, res, next) {  
+
+  User.find((err, userList) => {
+      if(err)
+      {
+          console.error(err);
+          return res.status(400).send({   
+              success: false, 
+              message: getErrorMessage(err)
+          });
+      }
+      else
+      {
+          res.status(200).json(userList);            
+      }
+  });
+}
+
+//gets user by ID
+exports.userByID = function (req, res, next) {
+
+  let id = req.params.id;
+  
+  User.findById(id, (err, item) => {
+      if (err) return next(err);
+      if (!item) return next(new Error('Failed to load a item '+ username +' from the survey '));
+
+      req.item = item;
+      console.log(item);
+      next();
+  });
+};
+
+//logic to process edit user
+module.exports.processEditUser = (req, res, next) => {
+
+  let id = req.params.id
+
+
+  let updatedItem = new User(req.body)
+
+  User.updateOne({_id: id}, updatedItem, (err) => {
+      if(err)
+      {
+          console.log(err);
+          //res.end(err);
+          return res.status(400).json({
+              success: false,
+              message: getErrorMessage(err)
+          });
+      }
+      else
+      {
+          
+          res.status(200).json(updatedItem); 
+      }
+  });
+
+}
+
+exports.getItem = function (req, res) {
+  res.status(200).json(req.item);
+};

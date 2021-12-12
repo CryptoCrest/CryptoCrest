@@ -1,0 +1,51 @@
+
+<app-header></app-header>
+
+
+<div class="main_div" style="background-image:url('../../assets/work3.png'); height: 850px;">
+<!-- Content for the Add_Edit page -->
+<div class="container_div" style="padding-top: 30px; width: 55%; height: 850px; ">
+    <div class="row">
+        <div class="container_header">
+            <h1>Edit User Profile</h1>
+
+            <form novalidate #form="ngForm" (ngSubmit)="save(form)">
+                <!-- <form class="form" method="POST"> -->
+                    <div class="form-group">
+                        
+                        <input type="hidden"
+                                name="id"
+                                [(ngModel)]="item._id"
+                        >
+
+                        <input type="text" 
+                            id="itemTextField"
+                            placeholder="Enter the User Name"
+                            name="username" 
+                            [(ngModel)]="item.username"
+                            required>
+                    </div>
+               
+                <br/>
+
+                <button type="submit">
+                    <i class="fas fa-edit"></i> 
+                    Submit
+                </button>
+                <button routerLink="/users/userprofile" >
+                    <i class="fas fa-undo"></i> 
+                    Cancel
+                </button>
+
+            </form>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    <app-footer></app-footer>
+
+    </div>
+</div>

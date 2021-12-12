@@ -26,6 +26,19 @@ export class RestDataSource {
         return this.http.get<Survey[]>(this.baseUrl + "survey/list");
     }
 
+      //gets user list
+      getUserList(): Observable<User[]> {
+        return this.http.get<User[]>(this.baseUrl + "users/userprofile");
+    }
+
+    //update user item
+    updateUser(item: User): Observable<User> {
+        return this.http.put<User>(`${this.baseUrl}users/editUser/${item._id}`,
+            item, this.getOptions());
+    }
+
+
+
     //insert survey items
     insertSurvey(item: Survey): Observable<Survey> {
         return this.http.post<Survey>(this.baseUrl + "survey/add",
@@ -71,4 +84,8 @@ export class RestDataSource {
             })
         }
     }
+
+  
+
+    
 }

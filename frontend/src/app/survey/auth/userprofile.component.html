@@ -1,0 +1,40 @@
+<!-- <% include ../partials/header.ejs %> -->
+<app-header></app-header>
+
+
+<div class="main_div" style="background-image:url('../../assets/work1.png'); height: 750px;">
+<div class="container_div" style="padding-top: 30px; width: 55%; height: 750px; ">
+    
+
+        <div class="container_header">
+            <h1 *ngIf="auth.username != null" >{{ auth.username }}</h1>
+            <img src="../../assets/profile.png" alt="Profile Picture" style="width:50%; background-color: aliceblue; margin-left: 180px;">
+           
+        </div>
+        <div *ngFor="let item of userList" >
+            <p *ngIf="auth.username == item.username">{{ item.lastName }}</p>
+            <p *ngIf="auth.username == item.username">{{ item.firstName }}</p>
+            <p *ngIf="auth.username == item.username">{{item.email}}</p>
+
+        </div>
+        <!--
+
+        <a [routerLink]="['/users/editUser/', item._id]" style="margin: 0%;" class="btn bg-primary btn-primary btn-sm">
+            <i class="fas fa-pencil-alt"></i>
+        </a>
+        -->
+
+    <div style="color: azure;">
+    
+   
+    
+    </div>
+    
+    <app-footer></app-footer>
+
+    
+</div>
+</div>
+<!-- <% include ../partials/footer.ejs %>
+ -->
+ 

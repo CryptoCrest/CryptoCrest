@@ -1,0 +1,38 @@
+<!--Name: Nguyen Ha Phuong - 301147401
+    Date: 23-Oct-2021 -->
+
+    <%- include partials/header.ejs %>
+
+    <%- include partials/main_nav.ejs %>
+    
+    
+    <style>
+      .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 300px;
+        margin: auto;
+        text-align: center;
+        font-family: arial;
+      }
+    
+        main {
+          background-color: #b3d9ff;
+        }
+      
+      </style>
+      </head>
+      <main>
+      <br/>
+      <h2 style="text-align:center">User Profile</h2>
+      <br/>
+      
+      <div class="card">
+        <img src="/images/profile.png" alt="Profile Picture" style="width:100%">
+        <h1><%= userName %></h1>
+      </div>
+      <br/><br/><br/><br/><br/>
+      </main>
+    
+    <%- include partials/bottom_nav.ejs %>  
+    
+    <%- include partials/footer.ejs %>

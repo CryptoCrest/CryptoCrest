@@ -9,6 +9,7 @@ import { ResponseModel } from "./response.model";
 @Injectable()
 export class AuthService {
 
+    
     public username: string;
     private _redirectUrl: string;
 
@@ -17,18 +18,23 @@ export class AuthService {
     authenticate(username: string, password: string): Observable<boolean> {
         return this.datasource.authenticate(username, password)
             .pipe(map(response => {
+               
                 if(response)
                 {
                     this.username = username;
                 }
                 return response
+                
             }));
     }
+
+    
 
     signupUser(user: User): Observable<ResponseModel> {
         return this.datasource.signupUser(user);
     }
 
+   
     get authenticated(): boolean {
         return this.datasource.auth_token != null;
     }
